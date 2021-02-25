@@ -5,6 +5,10 @@ html {
     box-sizing: inherit;
   }
 
+  body {
+      background-color: darkgray;
+  }
+
 .main {
     width: 80%;
     border: thin solid black;
