@@ -17,6 +17,7 @@ html {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: rgb(7,12,129);
+    align-items: center;
 }
 
 .board-item {
@@ -35,4 +36,9 @@ html {
     font-family: 'Anton', sans-serif;
     font-size: 70px;
     color: rgb(215,160,75);
+}
+
+.clue:hover {
+    cursor: pointer;
+    background-color: rgb(44, 47, 128);
 }
