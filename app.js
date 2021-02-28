@@ -60,10 +60,16 @@ let clueSpaces = document.querySelectorAll(".clue");
 let modal = document.querySelector(".modal");
 let closeButton = document.querySelector(".close-button");
 
+
+// SHOW MODAL
+function showModal() {
+    modal.style.display = "block";
+    this.setAttribute("class", "clicked-clue");
+    this.removeEventListener("click", showModal);
+}
+
 for (var clueSpace of clueSpaces) {
-    clueSpace.addEventListener("click", function() {
-        modal.style.display = "block";
-    })
+    clueSpace.addEventListener("click", showModal);
 }
 
 closeButton.addEventListener("click", function() {

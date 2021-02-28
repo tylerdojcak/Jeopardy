@@ -42,6 +42,16 @@ body {
     background-color: rgb(44, 47, 128);
 }
 
+.clicked-clue {
+    border: 5px solid black;
+    color: rgb(7,12,129);
+    background-color: rgb(7,12,129);
+}
+
+.clicked-clue:hover {
+    background-color: rgb(7,12,129);
+}
+
 .modal {
     display: none;
     position: fixed;
