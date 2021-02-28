@@ -39,11 +39,11 @@ async function getClues() {
         })
     }
     console.log(roundCategories);
-    getClue();
+    assignClueIDs();
 }
 
 // GET PARTICULAR CLUE
-function getClue() {
+function assignClueIDs() {
     for (var i in roundCategories) {
         let categoryClues = document.getElementsByClassName(`category-${i}-clue`);
         for (var x = 0; x < 5; x++) {
@@ -55,4 +55,10 @@ function getClue() {
     }
 }
 
-getCategories();
+let modal = document.querySelector(".modal");
+let closeButton = document.querySelector(".close-button");
+closeButton.addEventListener("click", function() {
+    modal.style.display = "none";
+})
+
+//getCategories();
