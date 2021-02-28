@@ -55,8 +55,17 @@ function assignClueIDs() {
     }
 }
 
+
+let clueSpaces = document.querySelectorAll(".clue");
 let modal = document.querySelector(".modal");
 let closeButton = document.querySelector(".close-button");
+
+for (var clueSpace of clueSpaces) {
+    clueSpace.addEventListener("click", function() {
+        modal.style.display = "block";
+    })
+}
+
 closeButton.addEventListener("click", function() {
     modal.style.display = "none";
 })
