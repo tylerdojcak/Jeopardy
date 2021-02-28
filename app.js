@@ -25,9 +25,6 @@ function setCategories() {
     //console.log(categorySpaces);
 }
 
-
-
-
 // RETREIVE CLUES
 async function getClues() {
     /*let url = "http://jservice.io/api/category?id=" + roundCategories[0].id;
@@ -42,6 +39,20 @@ async function getClues() {
         })
     }
     console.log(roundCategories);
+    getClue();
+}
+
+// GET PARTICULAR CLUE
+function getClue() {
+    for (var i in roundCategories) {
+        let categoryClues = document.getElementsByClassName(`category-${i}-clue`);
+        for (var x = 0; x < 5; x++) {
+            categoryClues[x].setAttribute("id", roundCategories[i].clues[x].id);
+            //console.log(categoryClues[x].id);
+            //console.log(roundCategories[i].clues);
+        }
+        console.log(categoryClues);
+    }
 }
 
 getCategories();

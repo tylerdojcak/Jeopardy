@@ -1,13 +1,13 @@
 html {
     box-sizing: border-box;
-  }
-  *, *:before, *:after {
+}
+*, *:before, *:after {
     box-sizing: inherit;
-  }
+}
 
-  body {
-      background-color: darkgray;
-  }
+body {
+    background-color: darkgray;
+}
 
 .main {
     width: 80%;
@@ -17,7 +17,7 @@ html {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: rgb(7,12,129);
-    align-items: center;
+    
 }
 
 .board-item {
