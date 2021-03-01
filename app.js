@@ -1,4 +1,5 @@
 let roundCategories = [];
+let roundClues = [];
 
 // RETRIEVE 6 RANDOM CATEGORIES FROM A RANDOM SET OF 100 
 function getCategories() {
@@ -40,9 +41,20 @@ async function getClues() {
     }
     console.log(roundCategories);
     assignClueIDs();
+    pushClues();
 }
 
-// GET PARTICULAR CLUE
+// PUSH CLUES INTO ROUNDCLUES ARRAY
+function pushClues() {
+    for (var i in roundCategories) {
+        for (var x in roundCategories[i].clues) {
+            roundClues.push(roundCategories[i].clues[x]);
+        }
+    }
+    console.log(roundClues);
+}
+
+// ASSIGN CLUE ID TO PROPER DIV ID ATTRIBUTE
 function assignClueIDs() {
     for (var i in roundCategories) {
         let categoryClues = document.getElementsByClassName(`category-${i}-clue`);
@@ -51,22 +63,43 @@ function assignClueIDs() {
             //console.log(categoryClues[x].id);
             //console.log(roundCategories[i].clues);
         }
-        console.log(categoryClues);
+        //console.log(categoryClues);
     }
 }
+
 
 
 let clueSpaces = document.querySelectorAll(".clue");
 let modal = document.querySelector(".modal");
 let closeButton = document.querySelector(".close-button");
+let question = document.querySelector(".question");
+let answerSpace = document.querySelector(".answer");
+let hiddenAnswer;
 
 
 // SHOW MODAL
 function showModal() {
+    //this.getClue();
+    //console.log(this.getAttribute("id"));
+    for (var i in roundClues) {
+        if (this.getAttribute("id") == roundClues[i].id) {
+            question.innerHTML = roundClues[i].question.toUpperCase();
+            hiddenAnswer = roundClues[i].answer.toUpperCase();
+        }
+    }
     modal.style.display = "block";
     this.setAttribute("class", "clicked-clue");
+    this.innerHTML = "";
     this.removeEventListener("click", showModal);
+    console.log(hiddenAnswer);
 }
+
+// SHOW ANSWER
+function showAnswer() {
+    answerSpace.innerHTML = hiddenAnswer;
+    answerSpace.classList.add("revealed");
+}
+
 
 for (var clueSpace of clueSpaces) {
     clueSpace.addEventListener("click", showModal);
@@ -74,6 +107,11 @@ for (var clueSpace of clueSpaces) {
 
 closeButton.addEventListener("click", function() {
     modal.style.display = "none";
+    answerSpace.classList.remove("revealed");
+    answerSpace.innerHTML = "Click here to reveal answer."
 })
 
-//getCategories();
+answerSpace.addEventListener("click", showAnswer);
+
+
+getCategories();
