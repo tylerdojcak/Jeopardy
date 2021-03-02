@@ -105,13 +105,17 @@ for (var clueSpace of clueSpaces) {
     clueSpace.addEventListener("click", showModal);
 }
 
+
+function resetAnswer() {
+    
+}
 closeButton.addEventListener("click", function() {
     modal.style.display = "none";
     answerSpace.classList.remove("revealed");
     answerSpace.innerHTML = "Click here to reveal answer."
 })
 
+
 answerSpace.addEventListener("click", showAnswer);
+document.querySelector(".start-button").addEventListener("click", getCategories);
 
-
-getCategories();
