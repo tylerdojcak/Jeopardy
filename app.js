@@ -81,10 +81,24 @@ function showModal() {
     console.log(hiddenAnswer);
 }
 
+
+function styleAnswer() {
+    answerSpace.style.color = "white";
+    answerSpace.style.backgroundColor = "rgb(7,12,129)";
+    answerSpace.style.fontFamily = '"Cinzel", serif';
+}
+
+function unStyleAnswer() {
+    answerSpace.style.color = "red";
+    answerSpace.style.backgroundColor = "white";
+    answerSpace.style.fontFamily = "serif";
+}
+
 // SHOW ANSWER
 function showAnswer() {
     answerSpace.innerHTML = hiddenAnswer;
-    answerSpace.classList.add("revealed");
+    //answerSpace.classList.add("revealed");
+    styleAnswer();
 }
 
 
@@ -93,13 +107,11 @@ for (var clueSpace of clueSpaces) {
 }
 
 
-function resetAnswer() {
-    
-}
 closeButton.addEventListener("click", function() {
     modal.style.display = "none";
-    answerSpace.classList.remove("revealed");
+    //answerSpace.classList.remove("revealed");
     answerSpace.innerHTML = "Click here to reveal answer."
+    unStyleAnswer();
 })
 
 

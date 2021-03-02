@@ -104,31 +104,24 @@ body {
     font-size: 1.6rem;
 }
 
-.modal-content .question {
+.question {
     color: white;
     padding: 5% 10%;
 }
 
-.modal-content .answer {
+.answer {
     width: 80%;
     background-color: white;
-    color: rgb(7,12,129);
+    color: red;
     font-family: serif;
     font-size: 1.4rem;
     text-align: center;
     margin: auto auto;
 }
 
-.modal-content .answer:hover {
+.answer:hover {
     cursor: pointer;
     background-color: rgb(220, 220, 220);
-}
-
-.revealed {
-    background-color: rgb(7,12,129);
-    color: white;
-    font-size: 1.6rem;
-    font-family: "Cinzel", serif;
 }
 
 .close-button {
