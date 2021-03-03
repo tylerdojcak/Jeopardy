@@ -46,7 +46,6 @@ function pushClues() {
             roundClues.push(roundCategories[i].clues[x]);
         }
     }
-    console.log(roundClues);
 }
 
 // ASSIGN CLUE ID TO PROPER DIV ID ATTRIBUTE
@@ -79,7 +78,6 @@ function showModal() {
     this.setAttribute("class", "clicked-clue");
     this.innerHTML = "";
     this.removeEventListener("click", showModal);
-    console.log(hiddenAnswer);
 }
 
 
