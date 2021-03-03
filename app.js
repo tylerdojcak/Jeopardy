@@ -10,8 +10,11 @@ function getCategories() {
             let category = categoriesList.pop(categoriesList[categoryIndex]);
             roundCategories.push(category);          
         }
+        for (var clueSpace of clueSpaces) {
+            clueSpace.addEventListener("click", showModal);
+        }
         setCategories();
-        getClues();
+        getClues();       
     });
 }
 
@@ -56,8 +59,6 @@ function assignClueIDs() {
     }
 }
 
-
-
 let clueSpaces = document.querySelectorAll(".clue");
 let modal = document.querySelector(".modal");
 let closeButton = document.querySelector(".close-button");
@@ -97,23 +98,14 @@ function unStyleAnswer() {
 // SHOW ANSWER
 function showAnswer() {
     answerSpace.innerHTML = hiddenAnswer;
-    //answerSpace.classList.add("revealed");
     styleAnswer();
 }
 
-
-for (var clueSpace of clueSpaces) {
-    clueSpace.addEventListener("click", showModal);
-}
-
-
 closeButton.addEventListener("click", function() {
     modal.style.display = "none";
-    //answerSpace.classList.remove("revealed");
     answerSpace.innerHTML = "Click here to reveal answer."
     unStyleAnswer();
 })
-
 
 answerSpace.addEventListener("click", showAnswer);
 document.querySelector(".start-button").addEventListener("click", getCategories);
