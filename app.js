@@ -24,7 +24,7 @@ function getCategories() {
 function setCategories() {
     let categorySpaces = document.getElementsByClassName("category");
     for (var i = 0; i < 6; i++) {
-        categorySpaces[i].innerHTML = roundCategories[i].title.toUpperCase();
+        categorySpaces[i].innerHTML = "<span>" + roundCategories[i].title.toUpperCase() + "</span>";
     }
 }
 
