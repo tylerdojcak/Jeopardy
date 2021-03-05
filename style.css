@@ -44,6 +44,10 @@ body {
 	background-color:#0688fa;
 }
 
+.start-button:disabled {
+    display: none;
+}
+
 .board-item {
     border: 5px solid black;
     background-color: rgb(7,12,129);

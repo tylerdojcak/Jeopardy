@@ -17,6 +17,7 @@ function getCategories() {
         setCategories();
         getClues();       
     });
+    document.querySelector(".start-button").setAttribute("disabled", "disabled");
 }
 
 // WRITE CATEGORIES TO CATEGORY BOARD SPACES
