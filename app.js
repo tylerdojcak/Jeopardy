@@ -82,29 +82,16 @@ function showModal() {
     this.removeEventListener("click", showModal);
 }
 
-
-function styleAnswer() {
-    answerSpace.style.color = "white";
-    answerSpace.style.backgroundColor = "rgb(7,12,129)";
-    answerSpace.style.fontFamily = '"Cinzel", serif';
-}
-
-function unStyleAnswer() {
-    answerSpace.style.color = "red";
-    answerSpace.style.backgroundColor = "white";
-    answerSpace.style.fontFamily = "serif";
-}
-
 // SHOW ANSWER
 function showAnswer() {
     answerSpace.innerHTML = hiddenAnswer;
-    styleAnswer();
+    answerSpace.classList.add("revealed");
 }
 
 closeButton.addEventListener("click", function() {
     modal.style.display = "none";
     answerSpace.innerHTML = "Click here to reveal answer."
-    unStyleAnswer();
+    answerSpace.classList.remove("revealed");
 })
 
 answerSpace.addEventListener("click", showAnswer);
