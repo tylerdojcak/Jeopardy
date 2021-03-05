@@ -7,7 +7,8 @@ function getCategories() {
     fetch(categoriesUrl).then(data => data.json()).then(categoriesList => {
         for (var i = 0; i < 6; i++) {
             let categoryIndex = Math.floor(Math.random() * categoriesList.length);
-            let category = categoriesList.pop(categoriesList[categoryIndex]);
+            let category = categoriesList[categoryIndex];
+            categoriesList.splice(categoryIndex, 1);
             roundCategories.push(category);          
         }
         for (var clueSpace of clueSpaces) {
