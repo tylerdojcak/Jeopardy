@@ -36,7 +36,6 @@ async function getClues() {
             roundCategories[i].clues = category.clues.slice(0, 5);
         })
     }
-    console.log(roundCategories);
     assignClueIDs();
     pushClues();
 }
@@ -96,4 +95,3 @@ closeButton.addEventListener("click", function() {
 
 answerSpace.addEventListener("click", showAnswer);
 document.querySelector(".start-button").addEventListener("click", getCategories);
-
